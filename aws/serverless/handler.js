@@ -1,8 +1,21 @@
 'use strict';
 
-// Your first function handler
-module.exports.aws_hop = (event, context, cb) => cb(null,
-  { message: 'Your function executed successfully!', event }
-);
+module.exports.aws_hop = function(event, context, cb) {
 
-// You can add more handlers here, and reference them in serverless.yml
+  var start = new Date();
+
+  var hops = event.body.hops;
+
+  var lambda = {
+      "provider": "AWS Lamba - Node.js",
+      "start":  start,
+      "temperature": event.body.hops[0].temperature,
+      "stop": new Date()
+    };
+
+	hops.push(lambda);
+
+    return cb(null,
+    	{ 'hops': hops }
+  );
+};
