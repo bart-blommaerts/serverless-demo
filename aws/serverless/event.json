@@ -1,18 +1,16 @@
-      {
-        "params": {
-          "hops": [
-            {
-              "provider": "Auth 0 Webtask",
-              "start": "2016-08-25T20:04:39.079Z",
-              "temperature": "42",
-              "stop": "2016-08-25T20:04:39.079Z"
-            },
-            {
-              "provider": "IBM OpenWhisk",
-              "start": "2016-08-25T20:04:50.184Z",
-              "temperature": "42",
-              "stop": "2016-08-25T20:04:50.184Z"
-            }
-          ]
-        }
+{
+  "hops": [
+    {
+      "provider": "Auth 0 Webtask",
+      "start": "2016-08-25T20:04:39.079Z",
+      "temperature": "42",
+      "stop": "2016-08-25T20:04:39.079Z"
+    },
+    {
+      "provider": "IBM OpenWhisk",
+      "start": "2016-08-25T20:04:50.184Z",
+      "temperature": "42",
+      "stop": "2016-08-25T20:04:50.184Z"
     }
+  ]
+}
