@@ -9,7 +9,7 @@ module.exports.aws_hop = function(event, context, cb) {
   var lambda = {
       "provider": "AWS Lamba - Node.js",
       "start":  start,
-      "temperature": event.body.hops[0].temperature,
+      "temperature": hops[0].temperature,
       "stop": new Date()
     };
 
