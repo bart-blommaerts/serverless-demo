@@ -1,11 +1,13 @@
 console.log('Loading function');
 
 exports.dynamo_hops = function(event, context, callback) {
-    console.log(JSON.stringify(event, null, 2));
-    event.Records.forEach(function(record) {
-        console.log(record.eventID);
-        console.log(record.eventName);
-        console.log('DynamoDB Record streamed: %j', record.dynamodb);
-    });
+
+	for (i = 0; i < 3; i++) { 
+		console.log(event.Records[0].dynamodb.NewImage[i].M.provider.S);
+		console.log(event.Records[0].dynamodb.NewImage[i].M.start.S);
+		console.log(event.Records[0].dynamodb.NewImage[i].M.temperature.S); 
+    	console.log(event.Records[0].dynamodb.NewImage[i].M.stop.S);
+	}
+
     callback(null, "message");
 };

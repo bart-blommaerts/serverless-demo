@@ -1,3 +1,10 @@
+# AWS Lambda to process a DynamoDB stream
+
+Basic implementation to reconstruct the JSON from the DynamoDB stream.
+To see the reconstructed values, open the AWS CloudWatch LogGroups and check the latest Streams for /aws/lambda/ProcessDynamoDBStream.
+
+## Useful AWS commands
+
 aws lambda create-function \
 --region eu-west-1 \
 --function-name ProcessDynamoDBStream \
