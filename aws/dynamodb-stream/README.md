@@ -9,7 +9,7 @@ aws lambda create-function \
 --region eu-west-1 \
 --function-name ProcessDynamoDBStream \
 --zip-file fileb://ProcessDynamoDBStream.js.zip \
---role arn:aws:iam::836964591189:role/lambda-dynamodb-execution-role \
+--role "role" \
 --handler ProcessDynamoDBStream.dynamo_hops \
 --runtime nodejs4.3 \
 --profile default
@@ -28,7 +28,7 @@ outputfile.txt
 aws lambda create-event-source-mapping \
 --region eu-west-1 \
 --function-name ProcessDynamoDBStream \
---event-source arn:aws:dynamodb:eu-west-1:836964591189:table/hops/stream/2016-08-28T07:37:40.258 \
+--event-source "role" \
 --batch-size 100 \
 --starting-position TRIM_HORIZON \
 --profile default
@@ -37,5 +37,5 @@ aws lambda create-event-source-mapping \
 aws lambda list-event-source-mappings \
 --region eu-west-1 \
 --function-name ProcessDynamoDBStream \
---event-source arn:aws:dynamodb:eu-west-1:836964591189:table/hops/stream/2016-08-28T07:37:40.258 \
+--event-source "role" \
 --profile default
